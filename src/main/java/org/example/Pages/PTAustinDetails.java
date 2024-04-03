@@ -21,22 +21,16 @@ public class PTAustinDetails {
     public void selectDate () {
         WebElement calendarIcon = driver.findElement(By.xpath("//*[contains(@class, 'border') and contains(@class, 'rounded') and contains(@class, 'border-gray-300') and contains(@class, 'w-full') and contains(@class, 'px-4') and contains(@class, 'py-2') and contains(@class, 'gap-2') and contains(@class, 'flex') and contains(@class, 'relative') and contains(@class, 'items-center') and contains(@class, 'hover:cursor-pointer')]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", calendarIcon);
-        //calendarIcon.click();
         calendarIcon.click();
 
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class, 'border') and contains(@class, 'rounded') and contains(@class, 'border-gray-300') and contains(@class, 'w-full') and contains(@class, 'px-4') and contains(@class, 'py-2') and contains(@class, 'gap-2') and contains(@class, 'flex') and contains(@class, 'relative') and contains(@class, 'items-center') and contains(@class, 'hover:cursor-pointer')]")));
 
 
-        String desiredDate = "2024-04-19";
-        WebElement dateElement = driver.findElement(By.xpath("//span[contains(text(), '" + desiredDate + "')]"));
+        String date = "2024-04-19";
+        WebElement dateElement = driver.findElement(By.xpath("//span[contains(text(), '" + date + "')]"));
         dateElement.click();
 
-//        WebElement calendarElement = driver.findElement(By.xpath("//*[contains(@class, 'border') and contains(@class, 'rounded') and contains(@class, 'border-gray-300') and contains(@class, 'w-full') and contains(@class, 'px-4') and contains(@class, 'py-2') and contains(@class, 'gap-2') and contains(@class, 'flex') and contains(@class, 'relative') and contains(@class, 'items-center') and contains(@class, 'hover:cursor-pointer')]"));
-//        calendarElement.click();
-//
-//        WebElement dateElement = driver.findElement(By.xpath("//abbr[@aria-label='19 April 2024']"));
-//        dateElement.click();
     }
 
     public void selectChangeTime () {

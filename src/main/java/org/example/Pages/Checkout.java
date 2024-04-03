@@ -41,13 +41,12 @@ public class Checkout {
     }
 
     public void checkoutCardNumber () {
-//        WebElement CardNumber = driver.findElement(By.xpath("//input[@placeholder='1234 1234 1234 1234']"));
-//        CardNumber.sendKeys("4242424242424242");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement CardNumber = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Field-numberInput")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", CardNumber);
         CardNumber.sendKeys("4242424242424242");
+
     }
 
     public void checkoutExpiry () {
@@ -73,8 +72,8 @@ public class Checkout {
         checkoutEmail();
         checkoutNumber();
       //  checkoutCardNumber();
-        checkoutExpiry();
-        checkoutCVC();
+//        checkoutExpiry();
+//        checkoutCVC();
         clickPay();
 
     }
